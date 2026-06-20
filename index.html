@@ -134,9 +134,21 @@
         filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.6));
       }
 
+      /* The signature PNG is a 2000x2000 square with the ink occupying only
+         the middle band (~18% empty top, ~18% empty bottom). Crop to the ink
+         bounds so it sits tight under the wordmark instead of overflowing. */
+      .sig-wrap {
+        width: clamp(220px, 46vw, 360px);
+        aspect-ratio: 1000 / 639;
+        overflow: hidden;
+        display: block;
+      }
+
       .signature {
-        width: clamp(240px, 50vw, 420px);
+        width: 100%;
         height: auto;
+        display: block;
+        margin-top: -18%; /* lift the empty top band out of view */
         /* PNG is black ink on white — invert to white ink, then screen
            drops the (now black) background against the dark page. */
         filter: invert(1)
@@ -239,12 +251,14 @@
 
       <h1 class="wordmark">Kyle Mogged</h1>
 
-      <img
-        class="signature"
-        src="./Media/Kyle_M_31_Signature_Black.PNG"
-        alt="Kyle Mogged signature"
-        width="420"
-      />
+      <div class="sig-wrap">
+        <img
+          class="signature"
+          src="./Media/Kyle_M_31_Signature_Black.PNG"
+          alt="Kyle Mogged signature"
+          width="360"
+        />
+      </div>
 
       <p class="title">The Zen Wizard</p>
 
