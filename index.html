@@ -41,28 +41,39 @@
       }
 
       body {
-        background:
-          radial-gradient(
-            120% 80% at 50% -10%,
-            rgba(124, 58, 237, 0.18) 0%,
-            transparent 55%
-          ),
-          radial-gradient(
-            90% 60% at 50% 110%,
-            rgba(229, 181, 60, 0.1) 0%,
-            transparent 60%
-          ),
-          var(--black);
+        background: var(--black);
         color: var(--cream);
         font-family: "Poiret One", system-ui, sans-serif;
         min-height: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
+        align-items: stretch;
         text-align: center;
-        padding: clamp(1.5rem, 4vw, 3rem) 1.25rem clamp(3.5rem, 8vw, 6rem);
         -webkit-font-smoothing: antialiased;
+      }
+
+      /* ---- Black upper section: portrait → epithet ---- */
+      .stage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: clamp(1.5rem, 4vw, 3rem) 1.25rem clamp(2rem, 5vw, 3.5rem);
+      }
+
+      /* ---- Purple lower section: starts at "Get in touch" ---- */
+      .contact-panel {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: clamp(2.25rem, 5vw, 3.5rem) 1.25rem clamp(2rem, 5vw, 3rem);
+        background:
+          radial-gradient(
+            120% 90% at 50% 0%,
+            rgba(124, 58, 237, 0.35) 0%,
+            transparent 70%
+          ),
+          linear-gradient(180deg, #1c1233 0%, #150d27 100%);
       }
 
       /* ---- Wordmark ---- */
@@ -98,11 +109,7 @@
         );
       }
 
-      /* ---- Center stage ---- */
       .stage {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         gap: clamp(1.25rem, 3.5vw, 2.25rem);
       }
 
@@ -180,7 +187,7 @@
         flex-direction: column;
         align-items: center;
         gap: 0.85rem;
-        margin-top: 0.5rem;
+        max-width: 100%;
       }
 
       .contact h2 {
@@ -194,18 +201,15 @@
 
       .email {
         display: inline-block;
-        font-size: clamp(1.05rem, 4vw, 1.5rem);
-        letter-spacing: 0.08em;
+        max-width: 100%;
+        font-size: clamp(0.95rem, 4vw, 1.5rem);
+        letter-spacing: 0.06em;
         color: var(--cream);
         text-decoration: none;
         padding: 0.7em 1.4em;
-        border: 1px solid rgba(229, 181, 60, 0.5);
+        border: 1px solid rgba(229, 181, 60, 0.55);
         border-radius: 999px;
-        background: linear-gradient(
-          180deg,
-          rgba(124, 58, 237, 0.12),
-          rgba(124, 58, 237, 0.04)
-        );
+        background: rgba(10, 8, 15, 0.4);
         transition:
           border-color 0.25s ease,
           box-shadow 0.25s ease,
@@ -226,12 +230,11 @@
 
       footer {
         margin-top: auto;
-        padding-top: 3rem;
-        padding-bottom: 1.5rem;
+        padding-top: clamp(2.5rem, 6vw, 4rem);
         font-size: 0.8rem;
         letter-spacing: 0.25em;
         text-transform: uppercase;
-        color: rgba(243, 238, 226, 0.4);
+        color: rgba(243, 238, 226, 0.5);
       }
     </style>
   </head>
@@ -261,15 +264,17 @@
       </div>
 
       <p class="title">The Zen Wizard</p>
+    </main>
 
-      <section class="contact">
+    <section class="contact-panel">
+      <div class="contact">
         <h2>Get in touch</h2>
         <a class="email" href="mailto:kyle@kylemogged.com"
           >kyle@kylemogged.com</a
         >
-      </section>
-    </main>
+      </div>
 
-    <footer>Audio Alchemy Collective</footer>
+      <footer>Audio Alchemy Collective</footer>
+    </section>
   </body>
 </html>
