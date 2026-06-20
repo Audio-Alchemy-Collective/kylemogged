@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kyle Mogged</title>
+    <meta
+      name="description"
+      content="Kyle Mogged — get in touch."
+    />
+
+    <!-- Poiret One: the Trailer Club display wordmark face -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --black: #0a0a0d;
+        --black-2: #121016;
+        --gold: #e5b53c;
+        --gold-bright: #f5d77c;
+        --gold-deep: #b8901f;
+        --purple: #7c3aed;
+        --purple-bright: #a855f7;
+        --cream: #f3eee2;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        background:
+          radial-gradient(
+            120% 80% at 50% -10%,
+            rgba(124, 58, 237, 0.18) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            90% 60% at 50% 110%,
+            rgba(229, 181, 60, 0.1) 0%,
+            transparent 60%
+          ),
+          var(--black);
+        color: var(--cream);
+        font-family: "Poiret One", system-ui, sans-serif;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        padding: clamp(1.5rem, 4vw, 3rem) 1.25rem;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ---- Top wordmark ---- */
+      .wordmark {
+        font-size: clamp(2.4rem, 9vw, 5.5rem);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        line-height: 1;
+        padding-left: 0.18em; /* optical centering for letter-spacing */
+        background: linear-gradient(
+          180deg,
+          var(--gold-bright) 0%,
+          var(--gold) 45%,
+          var(--gold-deep) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        filter: drop-shadow(0 2px 18px rgba(124, 58, 237, 0.35));
+      }
+
+      .deco-rule {
+        width: min(320px, 70vw);
+        height: 1px;
+        margin: 1.1rem auto 0;
+        background-image: linear-gradient(
+          to right,
+          transparent,
+          var(--gold) 20%,
+          var(--purple-bright) 50%,
+          var(--gold) 80%,
+          transparent
+        );
+      }
+
+      /* ---- Center stage ---- */
+      .stage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(1.25rem, 3.5vw, 2.25rem);
+      }
+
+      .portrait-wrap {
+        position: relative;
+        display: inline-block;
+      }
+
+      .portrait-wrap::before {
+        content: "";
+        position: absolute;
+        inset: -8% -6% -2%;
+        background: radial-gradient(
+          50% 50% at 50% 55%,
+          rgba(124, 58, 237, 0.45) 0%,
+          rgba(168, 85, 247, 0.18) 40%,
+          transparent 72%
+        );
+        filter: blur(6px);
+        z-index: 0;
+      }
+
+      .portrait {
+        position: relative;
+        z-index: 1;
+        width: clamp(220px, 42vw, 360px);
+        height: auto;
+        display: block;
+        filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.6));
+      }
+
+      .signature {
+        width: clamp(240px, 50vw, 420px);
+        height: auto;
+        /* PNG is black ink on white — invert to white ink, then screen
+           drops the (now black) background against the dark page. */
+        filter: invert(1)
+          drop-shadow(0 0 14px rgba(229, 181, 60, 0.25));
+        mix-blend-mode: screen;
+      }
+
+      /* ---- Get in touch ---- */
+      .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.85rem;
+        margin-top: 0.5rem;
+      }
+
+      .contact h2 {
+        font-size: clamp(1.1rem, 3.5vw, 1.6rem);
+        font-weight: 400;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--gold);
+        padding-left: 0.3em;
+      }
+
+      .email {
+        display: inline-block;
+        font-size: clamp(1.05rem, 4vw, 1.5rem);
+        letter-spacing: 0.08em;
+        color: var(--cream);
+        text-decoration: none;
+        padding: 0.7em 1.4em;
+        border: 1px solid rgba(229, 181, 60, 0.5);
+        border-radius: 999px;
+        background: linear-gradient(
+          180deg,
+          rgba(124, 58, 237, 0.12),
+          rgba(124, 58, 237, 0.04)
+        );
+        transition:
+          border-color 0.25s ease,
+          box-shadow 0.25s ease,
+          color 0.25s ease,
+          transform 0.25s ease;
+      }
+
+      .email:hover,
+      .email:focus-visible {
+        color: var(--gold-bright);
+        border-color: var(--gold);
+        box-shadow:
+          0 0 0 1px rgba(229, 181, 60, 0.4),
+          0 8px 30px rgba(124, 58, 237, 0.35);
+        transform: translateY(-2px);
+        outline: none;
+      }
+
+      footer {
+        margin-top: 2rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: rgba(243, 238, 226, 0.4);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="wordmark">Kyle Mogged</h1>
+      <div class="deco-rule" role="presentation"></div>
+    </header>
+
+    <main class="stage">
+      <div class="portrait-wrap">
+        <img
+          class="portrait"
+          src="./Media/Kyle_M_30_Profile_Picture_Transparent.PNG"
+          alt="Kyle Mogged"
+          width="360"
+        />
+      </div>
+
+      <img
+        class="signature"
+        src="./Media/Kyle_M_31_Signature_Black.PNG"
+        alt="Kyle Mogged signature"
+        width="420"
+      />
+
+      <section class="contact">
+        <h2>Get in touch</h2>
+        <a class="email" href="mailto:kyle@kylemogged.com"
+          >kyle@kylemogged.com</a
+        >
+      </section>
+    </main>
+
+    <footer>Audio Alchemy Collective</footer>
+  </body>
+</html>
