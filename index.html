@@ -59,13 +59,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         text-align: center;
-        padding: clamp(1.5rem, 4vw, 3rem) 1.25rem;
+        padding: clamp(1.5rem, 4vw, 3rem) 1.25rem clamp(3.5rem, 8vw, 6rem);
         -webkit-font-smoothing: antialiased;
       }
 
-      /* ---- Top wordmark ---- */
+      /* ---- Wordmark ---- */
       .wordmark {
         font-size: clamp(2.4rem, 9vw, 5.5rem);
         letter-spacing: 0.18em;
@@ -85,9 +85,9 @@
       }
 
       .deco-rule {
-        width: min(320px, 70vw);
+        width: min(420px, 78vw);
         height: 1px;
-        margin: 1.1rem auto 0;
+        margin: 0 auto;
         background-image: linear-gradient(
           to right,
           transparent,
@@ -144,6 +144,24 @@
         mix-blend-mode: screen;
       }
 
+      /* ---- Epithet ---- */
+      .title {
+        font-size: clamp(1.3rem, 5vw, 2.1rem);
+        letter-spacing: 0.34em;
+        text-transform: uppercase;
+        padding-left: 0.34em; /* optical centering for letter-spacing */
+        margin-top: -0.25rem;
+        background: linear-gradient(
+          180deg,
+          var(--purple-bright) 0%,
+          var(--gold) 120%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        filter: drop-shadow(0 1px 12px rgba(124, 58, 237, 0.4));
+      }
+
       /* ---- Get in touch ---- */
       .contact {
         display: flex;
@@ -195,7 +213,9 @@
       }
 
       footer {
-        margin-top: 2rem;
+        margin-top: auto;
+        padding-top: 3rem;
+        padding-bottom: 1.5rem;
         font-size: 0.8rem;
         letter-spacing: 0.25em;
         text-transform: uppercase;
@@ -205,11 +225,6 @@
   </head>
 
   <body>
-    <header>
-      <h1 class="wordmark">Kyle Mogged</h1>
-      <div class="deco-rule" role="presentation"></div>
-    </header>
-
     <main class="stage">
       <div class="portrait-wrap">
         <img
@@ -220,12 +235,18 @@
         />
       </div>
 
+      <div class="deco-rule" role="presentation"></div>
+
+      <h1 class="wordmark">Kyle Mogged</h1>
+
       <img
         class="signature"
         src="./Media/Kyle_M_31_Signature_Black.PNG"
         alt="Kyle Mogged signature"
         width="420"
       />
+
+      <p class="title">The Zen Wizard</p>
 
       <section class="contact">
         <h2>Get in touch</h2>
