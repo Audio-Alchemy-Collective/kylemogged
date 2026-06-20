@@ -1,0 +1,7 @@
+# Railway provides $PORT at runtime; fall back to 80 for local `docker run`.
+:{$PORT:80} {
+	root * /srv
+	file_server
+	encode gzip
+	header Cache-Control "public, max-age=3600"
+}
