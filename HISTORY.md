@@ -1,5 +1,10 @@
 # Project History
 
+## 2026-10-02 — "Site by trailer.club" footer credit
+- **Branch:** main
+- **Progress:** Added a `.credit` line under "Audio Alchemy Collective" in the footer: "Site by trailer.club", linking to https://trailer.club (new tab). Gold link, hover brightens, matches footer letter-spacing.
+- **Decisions:** kept "Audio Alchemy Collective" line; credit sits below it as a second, slightly smaller line.
+
 ## 2026-06-20 — Landing page live on Railway + custom domain
 - **Branch:** main
 - **Progress:**

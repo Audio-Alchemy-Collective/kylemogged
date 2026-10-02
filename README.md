@@ -6,6 +6,7 @@ Landing page for Kyle Mogged.
 - Wordmark set in **Poiret One** (the Trailer Club display face).
 - Palette: black / gold / purple.
 - Contact: kyle@kylemogged.com
+- Footer credit: "Site by trailer.club" → https://trailer.club
 
 ## Local preview
 

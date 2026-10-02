@@ -231,10 +231,37 @@
       footer {
         margin-top: auto;
         padding-top: clamp(2.5rem, 6vw, 4rem);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
         font-size: 0.8rem;
         letter-spacing: 0.25em;
         text-transform: uppercase;
         color: rgba(243, 238, 226, 0.5);
+      }
+
+      /* ---- Site credit: trailer.club ---- */
+      .credit {
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
+      }
+
+      .credit a {
+        color: var(--gold);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(229, 181, 60, 0.35);
+        padding-bottom: 0.1em;
+        transition:
+          color 0.25s ease,
+          border-color 0.25s ease;
+      }
+
+      .credit a:hover,
+      .credit a:focus-visible {
+        color: var(--gold-bright);
+        border-color: var(--gold-bright);
+        outline: none;
       }
     </style>
   </head>
@@ -274,7 +301,15 @@
         >
       </div>
 
-      <footer>Audio Alchemy Collective</footer>
+      <footer>
+        <p>Audio Alchemy Collective</p>
+        <p class="credit">
+          Site by
+          <a href="https://trailer.club" target="_blank" rel="noopener"
+            >trailer.club</a
+          >
+        </p>
+      </footer>
     </section>
   </body>
 </html>
